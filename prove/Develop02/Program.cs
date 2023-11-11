@@ -9,9 +9,9 @@ class Program
         RandomStatementGenerator randomstatementone = new RandomStatementGenerator();
         randomstatementone._questions.Add("Did someone or something make you laugh today? Tell me all about it, I also want to laugh.");
         randomstatementone._questions.Add("What new principle/concept did you learn today?");
-        randomstatementone._questions.Add("What was the weather like today? Did it conrtibute towards your day?");
+        randomstatementone._questions.Add("What was the weather like today? Did it contribute towards your day?");
         randomstatementone._questions.Add("Do you remember what you dreamt about last night? If so, do tell.");
-        randomstatementone._questions.Add("What interesting interaction did you with someone today?");
+        randomstatementone._questions.Add("What interesting interaction did you have with someone today?");
 
 
         //Initiating Journal class
@@ -25,7 +25,7 @@ class Program
         Console.WriteLine("2. Display");
         Console.WriteLine("3. Save");
         Console.WriteLine("4. Load");
-        Console.WriteLine("5. Quite");
+        Console.WriteLine("5. Quit");
 
         Console.Write("What would you like to do?");
         string choiceNumberString = Console.ReadLine();
@@ -72,6 +72,10 @@ class Program
 
                 journalpro.LoadFromFile(nameOfFileToRead);
             }
+            else
+            {
+                Console.WriteLine("Invalid option, please choose (press) from one to five");
+            }
 
             Console.WriteLine("Please select one of the following choices:");
 
@@ -79,7 +83,7 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Save");
             Console.WriteLine("4. Load");
-            Console.WriteLine("5. Quite");
+            Console.WriteLine("5. Quit");
 
             Console.Write("What would you like to do?");
             choiceNumberString = Console.ReadLine();
