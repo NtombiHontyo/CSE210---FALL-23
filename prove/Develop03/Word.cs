@@ -3,9 +3,7 @@ public class Word
     //My attributes
     private string _oneWord;
     private bool _isHidden;
-    internal object Value;
 
-    public int Length { get; internal set; }
 
     //This is a constructor
     public Word(string oneWord)
