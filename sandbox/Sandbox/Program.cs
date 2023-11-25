@@ -4,54 +4,70 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
-        string text = "I can do all things"; // this is stored in the word object
-        char delimeter = ' ';
+       // Console.Write(@"\");
+        //Thread.Sleep(500);
+        //Console.Write("\b \b");
+        //Console.Write("|");
 
-        Console.WriteLine($"{text}");
-        List<string> stringList = text.Split(delimeter).ToList();  //The list must use data from the Word class
+        List<char> charList = new List<char>();
 
-        
+        charList.Add('\\');
+        charList.Add('|');
+        charList.Add('/');
+        charList.Add('-');
+        charList.Add('\\');
+
         Console.WriteLine();
-        Console.WriteLine("Please press enter or type quit to finish");
+        //foreach (char charecter in charList)
+        //{
+          //  Console.Write(charecter);
+            //Thread.Sleep(500);
+            //Console.Write("\b \b");
+        //}
+
+        //Console.WriteLine();
+
+        List<char> countdown = new List<char>();
+
+        countdown.Add('5');
+        countdown.Add('4');
+        countdown.Add('3');
+        countdown.Add('2');
+        countdown.Add('1');
+
+        Console.WriteLine();
         
-        string userInput = Console.ReadLine();
-        while ( !AllWordsChangedToUnderscores(stringList))
+
+        //Working with time
+
+        DateTime currentTime = DateTime.Now;
+        DateTime FutureTime = currentTime.AddSeconds(5);
+        int i =0; 
+       // Thread.Sleep(3000);
+
+        while (DateTime.Now < FutureTime)
         {
-            Console.Clear();
-            Random randomgen = new Random();
-            int randomIndex = randomgen.Next(0, stringList.Count);
+            //foreach (char charecter in charList)
+            //    {
+           //         Console.Write(charecter);
+            //        Thread.Sleep(500);
+            //        Console.Write("\b \b");
+            //    }
 
+                //OR   
+            char s = charList[i]  ;
+            Console.Write(s);
+            Thread.Sleep(500);
+            Console.Write("\b \b");
 
-        string selectedWord = stringList[randomIndex];
-        string underscore = new string('_', selectedWord.Length);
-        stringList[randomIndex] = underscore;
+            i++;
 
-            foreach (string item in stringList)
+            if (i >= charList.Count)
             {
-                 Console.Write($"{item} ");
-            }
-            Console.WriteLine();
-            Console.WriteLine("Please press enter or type quit to finish");
-            userInput = Console.ReadLine();
-
-            if (userInput == "quit")
-            {
-                break;
-            }
+                i = 0;
+            }  
         }
-        static bool AllWordsChangedToUnderscores(List<string> stringList)
-    {
-        // Check if all words in the list have changed to underscores
-        foreach (string selectedWord in stringList)
-        {
-            if (selectedWord != new string('_', selectedWord.Length))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
+        
         
     }
 }
