@@ -41,6 +41,10 @@ public class GoalManager
             string fileName = Console.ReadLine();
             LoadGoals(fileName);
         }
+        else if (menuChoice == "5")
+        {
+            RecordEvent();
+        }
         }
         
     }
@@ -50,17 +54,22 @@ public class GoalManager
     }
     public void ListGoalNames()
     {
-        SimpleGoal simpleGoal = new SimpleGoal();
-        
-        simpleGoal.SetName("");
+        int index = 1;
+        foreach (Goal goal in _goals)
+        {
+            string name = goal.GetName();
+            Console.WriteLine($"{index}. {name}");
+            index++;
+        }
 
     }
     public void ListGoalDetails()
     {
+        int index = 1; 
         foreach (Goal goal in _goals)
-        {
-            
-            Console.WriteLine($"{goal.GetDetailsString()}");
+        { 
+            Console.WriteLine($"{index}. {goal.GetDetailsString()}");
+            index++;
         }
     }
     public void CreateGoal()
@@ -114,7 +123,15 @@ public class GoalManager
     }
     public void RecordEvent()
     {
-
+        Console.WriteLine("The Goals are: ");
+        ListGoalNames();
+        Console.Write("Which goal did you acccomplish?");
+        string answer = Console.ReadLine();
+        int goalAccomplished = int.Parse(answer);
+        Goal goal = _goals[goalAccomplished - 1];
+        goal.RecordEvent();
+        _score += goal.GetPoints();
+        Console.WriteLine($"You now have {_score} points");
     }
     public void SaveGoals(string fileName)
     {

@@ -2,7 +2,7 @@ public class EternalGoal : Goal
 {
     public EternalGoal() : base()
     {
-        
+
     }
     public EternalGoal(string name, string description, int points): base(name, description, points)
     {
@@ -10,7 +10,8 @@ public class EternalGoal : Goal
     }
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        int earnedPoints = _points;
+        Console.WriteLine($"Congratulations, you have earned {earnedPoints} points!");
     }
     public override bool IsComplete()
     {

@@ -11,7 +11,8 @@ public class SimpleGoal : Goal
     }
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        int earnedPoints = _points;
+        Console.WriteLine($"Congratulations, you have earned {earnedPoints} points!");
     }
     public override bool IsComplete()
     {

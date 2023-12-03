@@ -5,7 +5,7 @@ public class ChecklistGoal : Goal
     private int _bonus;
     public ChecklistGoal() : base()
     {
-        
+
     }
     public ChecklistGoal(string name, string description, int points): base(name, description, points)//(string name, string description, int target, int bonus) : base(name, description)
     {
@@ -15,7 +15,8 @@ public class ChecklistGoal : Goal
     }
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        int earnedPoints = _points;
+        Console.WriteLine($"Congratulations, you have earned {earnedPoints} points!");
     }
     public override bool IsComplete()
     {
