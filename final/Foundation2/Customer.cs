@@ -13,4 +13,8 @@ public class Customer
         return $"{_name} \n \n {_address.Display()}";
         
     }
+    public bool IsinUSA()
+    {
+        return _address.IsUSA();
+    }
 }

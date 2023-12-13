@@ -15,4 +15,16 @@ public class Address
     {
         return $"{_streetAddress} \n{_city} \n{_state} \n{_country}";
     }
+
+    public bool IsUSA()
+    {
+        if (_country == "USA")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
