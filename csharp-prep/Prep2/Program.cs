@@ -1,10 +1,11 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is your grade percentage? ");
+       Console.Write("What is your grade percentage? ");
         string answerFromUser = Console.ReadLine();
         int gradePercentage = int.Parse(answerFromUser);
         
@@ -39,5 +40,7 @@ class Program
         {
             Console.WriteLine("Sorry, you did not pass the class, please try harder next time.");
         }
+
+      
     }
 }
